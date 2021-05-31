@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.example</groupId>
     <artifactId>randoop-sample</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
@@ -27,7 +27,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>onevz.cxp.core</groupId>
+                <groupId>com.dhana1310</groupId>
                 <artifactId>randoop-junits-generation-maven-plugin</artifactId>
                 <version>4.2.6</version>
                 <configuration>
