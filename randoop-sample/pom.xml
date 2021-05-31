@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>randoop-sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <!-- Put com.verizon.Randoop Version Here -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.version>3.6.1</maven.version>
+    </properties>
+    <dependencies><!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>onevz.cxp.core</groupId>
+                <artifactId>randoop-junits-generation-maven-plugin</artifactId>
+                <version>4.2.6</version>
+                <configuration>
+                    <packageName>com.verizon</packageName>
+                    <timeoutInSeconds>100</timeoutInSeconds>
+                    <skipTestCaseGeneration>false</skipTestCaseGeneration>
+                    <testPerFile>100</testPerFile>
+                    <totalTestCaseLimit>100</totalTestCaseLimit>
+                    <skipClasses>
+                        <skipClass>com.verizon.Randoop</skipClass>
+                    </skipClasses>
+                    <skipPackages>
+                        <skipPackage>com.verizon.multiply</skipPackage>
+                    </skipPackages>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-tests</id>
+                        <goals>
+                            <goal>gentests</goal>
+                        </goals>
+                        <phase>generate-test-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
