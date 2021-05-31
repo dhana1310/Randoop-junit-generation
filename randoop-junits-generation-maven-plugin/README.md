@@ -1,4 +1,4 @@
-# randoop-maven-plugin
+# randoop-junits-generation-maven-plugin
 A plugin for using Randoop in Maven. See https://randoop.github.io for more information.
 
 ## Todo
@@ -31,13 +31,11 @@ plugin:
 
 ```xml
 <build>
-    ...
-    </plugins>
-        ...
+    <plugins>
         <plugin>
-            <groupId>com.5aab.automation</groupId>
-            <artifactId>randoop-maven-plugin</artifactId>
-            <version>4.0.3</version>
+            <groupId>com.dhana1310</groupId>
+            <artifactId>randoop-junits-generation-maven-plugin</artifactId>
+            <version>4.2.6</version>
             <configuration>
                 <packageName>my.base.package</packageName>
             </configuration>
@@ -51,9 +49,7 @@ plugin:
                 </execution>
             </executions>
         </plugin>
-        ...
     </plugins>
-    ...
 </build>
 ```
 It will collect all class from the (base) package name and run Randoop.
